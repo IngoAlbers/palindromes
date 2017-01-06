@@ -2,7 +2,7 @@ require 'yaml'
 require 'twitter'
 
 class TwitterClient
-  def initialize
+  def initialize(_options = nil)
     load_credentials
   end
 

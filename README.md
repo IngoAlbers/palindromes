@@ -43,3 +43,11 @@ To configure and run this application, do the following:
 - `bundle install`
 
 - `bundle exec ruby app.rb`
+
+### Options
+
+```
+    Available options:
+        -m, --min LENGTH              Minimum length of palindrome
+        -h, --help                    Show this message
+```

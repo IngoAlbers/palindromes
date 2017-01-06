@@ -2,10 +2,10 @@ require_relative 'twitter_client'
 require_relative 'rest_client'
 
 class StreamingClient < TwitterClient
-  def initialize
+  def initialize(options)
     super
 
-    stream
+    stream(options[:min_length])
   end
 
   private
@@ -18,7 +18,7 @@ class StreamingClient < TwitterClient
     RestClient.current
   end
 
-  def stream
+  def stream(min_length)
     client.sample do |object|
       next unless object.is_a?(Twitter::Tweet)
       rest_client.client.retweet(object) if object.text == object.text.reverse
