@@ -14,9 +14,8 @@ class StreamingClient
 
   def stream
     client.sample do |object|
-      if object.is_a?(Twitter::Tweet)
-        $rest_client.retweet(object) if object.text == object.text.reverse
-      end
+      next unless object.is_a?(Twitter::Tweet)
+      $rest_client.client.retweet(object) if object.text == object.text.reverse
     end
   end
 end
