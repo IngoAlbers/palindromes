@@ -5,7 +5,7 @@ class StreamingClient
   include TwitterClient
 
   def initialize
-    load_credentials
+    super
     stream
   end
 

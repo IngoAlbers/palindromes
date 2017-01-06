@@ -2,6 +2,10 @@ require 'yaml'
 require 'twitter'
 
 module TwitterClient
+  def initialize
+    load_credentials
+  end
+
   def load_credentials
     creds = File.join(__dir__, '../config/twitter.yml')
     @twitter_config = YAML.load_file(creds)
