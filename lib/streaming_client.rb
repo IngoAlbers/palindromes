@@ -8,11 +8,11 @@ class StreamingClient < TwitterClient
     stream
   end
 
+  private
+
   def client
     @client ||= init_client(Twitter::Streaming::Client)
   end
-
-  private
 
   def rest_client
     RestClient.current
