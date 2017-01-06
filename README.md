@@ -48,6 +48,6 @@ To configure and run this application, do the following:
 
 ```
     Available options:
-        -m, --min LENGTH              Minimum length of palindrome
+        -m, --min LENGTH              Minimum length of palindrome (Default: 4)
         -h, --help                    Show this message
 ```
