@@ -1,10 +1,8 @@
 require_relative 'twitter_client'
 
-class RestClient
-  include TwitterClient
-
+class RestClient < TwitterClient
   def client
-    Twitter::REST::Client.new { |config| init_config(config) }
+    @client ||= init_client(Twitter::REST::Client)
   end
 
   def self.current

@@ -1,16 +1,15 @@
 require_relative 'twitter_client'
 require_relative 'rest_client'
 
-class StreamingClient
-  include TwitterClient
-
+class StreamingClient < TwitterClient
   def initialize
     super
+
     stream
   end
 
   def client
-    Twitter::Streaming::Client.new { |config| init_config(config) }
+    @client ||= init_client(Twitter::Streaming::Client)
   end
 
   private
