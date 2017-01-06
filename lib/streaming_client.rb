@@ -1,4 +1,3 @@
-require 'twitter'
 require_relative 'twitter_client'
 
 class StreamingClient

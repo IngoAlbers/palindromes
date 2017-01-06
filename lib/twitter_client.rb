@@ -1,4 +1,5 @@
 require 'yaml'
+require 'twitter'
 
 module TwitterClient
   def load_credentials
