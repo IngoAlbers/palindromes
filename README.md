@@ -42,7 +42,7 @@ To configure and run this application, do the following:
 
 - `bundle install`
 
-- `bundle exec ruby app.rb`
+- `bundle exec ruby app.rb [OPTIONS]`
 
 ### Options
 
