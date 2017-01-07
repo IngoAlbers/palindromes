@@ -8,8 +8,8 @@ module Twitter
     private
 
     def to_essence
-      # Remove hashtags and mentions and filter only letters
-      text.downcase.gsub(/\B[@#]\S+\b/, '').gsub(/[^a-z]/, '')
+      # Remove hashtags, mentions and any non letters
+      text.downcase.gsub(/\B[@#]\S+\b|[^a-z]/, '')
     end
   end
 end
