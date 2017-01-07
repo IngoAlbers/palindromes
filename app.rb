@@ -10,7 +10,7 @@ OptionParser.new do |opts|
 
   options[:min_length] = 4
   opts.on('-m', '--min LENGTH', 'Minimum length of palindrome') do |v|
-    options[:min_length] = v
+    options[:min_length] = v.to_i
   end
 
   opts.on('-h', '--help', 'Show this message') do
