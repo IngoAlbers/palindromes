@@ -48,6 +48,7 @@ To configure and run this application, do the following:
 
 ```
     Available options:
-        -m, --min LENGTH              Minimum length of palindrome (Default: 4)
+        -m, --min LENGTH              Minimum palindrome length (Default: 4)
         -h, --help                    Show this message
+        -l, --language LANGUAGE       Tweet language (Default: en)
 ```

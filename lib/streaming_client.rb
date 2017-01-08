@@ -5,8 +5,10 @@ require_relative 'tweet'
 class StreamingClient < TwitterClient
   def initialize(options)
     super
+    @min_length = options[:min_length]
+    @language = options[:language]
 
-    stream(options[:min_length])
+    stream
   end
 
   private
@@ -19,12 +21,11 @@ class StreamingClient < TwitterClient
     RestClient.current
   end
 
-  def stream(min_length)
+  def stream
     client.sample do |object|
-      # Check only english tweets
-      next unless object.is_a?(Twitter::Tweet) && object.lang == 'en'
+      next unless object.is_a?(Twitter::Tweet) && object.lang == @language
 
-      rest_client.client.retweet(object) if object.palindrome?(min_length)
+      rest_client.client.retweet(object) if object.palindrome?(@min_length)
     end
   end
 end
