@@ -29,13 +29,12 @@ To configure and run this application, do the following:
  `cp config/example.twitter.yml config/twitter.yml`
 
 ```
-    development:
-      #API key/secret
-      consumer_key: API_KEY
-      consumer_secret: API_SECRET
-      #Access token/secret
-      access_token: ACCESS_TOKEN
-      access_token_secret: ACCESS_TOKEN_SECRET
+#API key/secret
+consumer_key: API_KEY
+consumer_secret: API_SECRET
+#Access token/secret
+access_token: ACCESS_TOKEN
+access_token_secret: ACCESS_TOKEN_SECRET
 ```
 
 - If on OSX and using homebrew, you may need `brew link autoconf` if it has not been linked already
@@ -44,11 +43,10 @@ To configure and run this application, do the following:
 
 - `bundle exec ruby app.rb [OPTIONS]`
 
-### Options
+### Available Options
 
 ```
-    Available options:
-        -m, --min LENGTH              Minimum palindrome length (Default: 4)
-        -h, --help                    Show this message
-        -l, --language LANGUAGE       Tweet language (Default: en)
+-m, --min LENGTH              Minimum palindrome length (Default: 4)
+-l, --language LANGUAGE       Tweet language (Default: en)
+-h, --help                    Show this message
 ```
