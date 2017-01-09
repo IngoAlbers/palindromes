@@ -2,7 +2,7 @@ module Twitter
   class Tweet
     def palindrome?(min_length)
       essence = to_essence
-      essence == essence.reverse && essence.length >= min_length
+      essence.length >= min_length && essence == essence.reverse
     end
 
     private
